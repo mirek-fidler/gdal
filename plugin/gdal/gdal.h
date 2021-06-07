@@ -33,12 +33,15 @@ public:
 	public:
 		Band(Gdal& owner, GDALRasterBand *band);
 	
-		Size           GetSize() const       { return size; }
-		Size           GetBlockSize() const  { return block_size; }
+		Size           GetSize() const        { return size; }
+		Size           GetBlockSize() const   { return block_size; }
 		
-		GDALDataType   GetType() const       { return type; }
-		int            GetBytes() const      { return pixel_bytes; }
-		bool           IsComplex() const     { return complex; }
+		String         GetDescription() const { return band->GetDescription(); }
+		String         GetUnit() const        { return band->GetUnitType(); }
+		
+		GDALDataType   GetType() const        { return type; }
+		int            GetBytes() const       { return pixel_bytes; }
+		bool           IsComplex() const      { return complex; }
 		
 		double         GetMinimum() const;
 		double         GetMaximum() const;
