@@ -288,6 +288,7 @@ bool Gdal::Open(const char *fn)
     ONCELOCK {
         MemoryIgnoreLeaksBegin();
 
+#if 0
 //		GDALRegister_GDB();
 		GDALRegister_GTiff();
 		GDALRegister_GXF();
@@ -390,6 +391,11 @@ bool Gdal::Open(const char *fn)
 //		GDALRegister_TMS();
 		GDALRegister_EIR();
 //		GDALRegister_GEOR();
+
+		GDALRegister_HDF5();
+		GDALRegister_HDF5Image();
+#endif
+	    GDALRegister_BAG();
 
         MemoryIgnoreLeaksEnd();
     }

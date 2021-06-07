@@ -52,7 +52,6 @@ exclude
 	frmts/georaster/*
 	frmts/gta/*
 	frmts/hdf4/*
-	frmts/hdf5/*
 	frmts/iso8211/*
 	frmts/jp2kak/*
 	frmts/jpipkak/*
@@ -101,6 +100,9 @@ exclude
 	*/gt_jpeg_copy.c*
 	*/gdalrasterfpolygonenumerator.c*
 	*/xmlreformat.c*
+
+	*/H5make_libsettings.c
+	*/H5detect.c
 ;
 
 includes *.h *.hpp;
