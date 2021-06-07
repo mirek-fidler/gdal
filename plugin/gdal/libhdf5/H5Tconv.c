@@ -684,8 +684,8 @@
                         NULL == (dt = (H5T_t *)H5I_object(dst_id)))                                            \
                         HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL,                                          \
                                     "unable to dereference datatype object ID")                                \
-                    if (st->shared->size != sizeof(ST) || dt->shared->size != sizeof(DT)) { printf("ST: %lld %lld DT: %lld %lld\n", st->shared->size, sizeof(ST), dt->shared->size, sizeof(DT));                     \
-                        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "disagreement about datatype size") }     \
+                    if (st->shared->size != sizeof(ST) || dt->shared->size != sizeof(DT))                      \
+                        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "disagreement about datatype size")      \
                     CI_ALLOC_PRIV                                                                              \
                     break;                                                                                     \
                                                                                                                \

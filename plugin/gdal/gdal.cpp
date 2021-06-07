@@ -6,6 +6,7 @@
 #define int32 tif_int32
 #define uint32 tif_uint32
 
+#include <gdal/libhdf5/hdf5.h>
 #include <gdal/gcore/gdal_priv.h>
 #include <gdal/port/cpl_conv.h>
 
@@ -288,7 +289,8 @@ bool Gdal::Open(const char *fn)
     ONCELOCK {
         MemoryIgnoreLeaksBegin();
 
-#if 0
+		H5Eset_auto(H5E_DEFAULT, NULL, NULL); // supress printing of error messages to console
+
 //		GDALRegister_GDB();
 		GDALRegister_GTiff();
 		GDALRegister_GXF();
@@ -394,7 +396,6 @@ bool Gdal::Open(const char *fn)
 
 		GDALRegister_HDF5();
 		GDALRegister_HDF5Image();
-#endif
 	    GDALRegister_BAG();
 
         MemoryIgnoreLeaksEnd();

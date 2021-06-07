@@ -2397,8 +2397,6 @@ static herr_t
 H5T_register(H5T_pers_t pers, const char *name, H5T_t *src, H5T_t *dst, H5T_conv_t func, hid_t dxpl_id,
              hbool_t api_call)
 {
-	printf("%s\n", name);
-
     hid_t       tmp_sid = -1, tmp_did = -1; /*temporary data type IDs    */
     H5T_path_t *old_path = NULL;            /*existing conversion path   */
     H5T_path_t *new_path = NULL;            /*new conversion path        */

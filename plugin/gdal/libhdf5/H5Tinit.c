@@ -149,8 +149,6 @@
 herr_t
 H5TN_init_interface(void)
 {
-	printf("Init interface\n");
-
     H5T_t	*dt = NULL;
     herr_t	ret_value = SUCCEED;
 
