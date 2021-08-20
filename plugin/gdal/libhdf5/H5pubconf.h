@@ -63,7 +63,7 @@
 /* #undef H5_HAVE_DIRECT */
 
 /* Define to 1 if you have the <dirent.h> header file. */
-#define H5_HAVE_DIRENT_H 1
+// #define H5_HAVE_DIRENT_H 1
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 // #define H5_HAVE_DLFCN_H 1
@@ -111,7 +111,7 @@
 /* #undef H5_HAVE_GETTEXTINFO */
 
 /* Define to 1 if you have the `gettimeofday' function. */
-#define H5_HAVE_GETTIMEOFDAY 1
+// #define H5_HAVE_GETTIMEOFDAY 1
 
 /* Define if the compiler understands inline */
 #define H5_HAVE_INLINE 1
@@ -271,7 +271,7 @@
 #define H5_HAVE_SYS_TIMEB_H 1
 
 /* Define to 1 if you have the <sys/time.h> header file. */
-#define H5_HAVE_SYS_TIME_H 1
+// #define H5_HAVE_SYS_TIME_H 1
 
 /* Define to 1 if you have the <sys/types.h> header file. */
 #define H5_HAVE_SYS_TYPES_H 1
@@ -300,10 +300,10 @@
 #endif
 
 /* Define to 1 if you have the <unistd.h> header file. */
-#define H5_HAVE_UNISTD_H 1
+// #define H5_HAVE_UNISTD_H 1
 
 /* Define to 1 if you have the `vasprintf' function. */
-#define H5_HAVE_VASPRINTF 1
+// #define H5_HAVE_VASPRINTF 1
 
 /* Define to 1 if you have the `vsnprintf' function. */
 #define H5_HAVE_VSNPRINTF 1
@@ -512,7 +512,7 @@
 #define H5_SYSTEM_SCOPE_THREADS 1
 
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
-#define H5_TIME_WITH_SYS_TIME 1
+// #define H5_TIME_WITH_SYS_TIME 1
 
 /* Define using v1.6 public API symbols by default */
 /* #undef H5_USE_16_API_DEFAULT */

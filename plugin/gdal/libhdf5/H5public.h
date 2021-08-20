@@ -139,8 +139,10 @@ typedef int herr_t;
  */
 typedef unsigned int hbool_t;
 typedef int          htri_t;
-
 /* Define the ssize_t type if it not is defined */
+
+#if 0
+
 #if H5_SIZEOF_SSIZE_T == 0
 /* Undefine this size, we will re-define it in one of the sections below */
 #undef H5_SIZEOF_SSIZE_T
@@ -154,9 +156,14 @@ typedef long ssize_t;
 typedef long long ssize_t;
 #define H5_SIZEOF_SSIZE_T H5_SIZEOF_LONG_LONG
 #else /* Can't find matching type for ssize_t */
+
 #error "nothing appropriate for ssize_t"
 #endif
 #endif
+
+#endif
+
+typedef intptr_t ssize_t;
 
 /*
  * The sizes of file objects have their own types defined here, use a 64-bit
@@ -314,6 +321,10 @@ typedef struct H5_ih_info_t {
     hsize_t index_size; /* btree and/or list */
     hsize_t heap_size;
 } H5_ih_info_t;
+
+#ifndef H5_DLL
+#define H5_DLL
+#endif
 
 /* Functions in H5.c */
 H5_DLL herr_t H5open(void);

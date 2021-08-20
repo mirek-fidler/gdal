@@ -618,7 +618,7 @@ time_t
 H5_make_time(struct tm *tm)
 {
     time_t the_time;                                     /* The converted time */
-#if defined(H5_HAVE_VISUAL_STUDIO) && (_MSC_VER >= 1900) /* VS 2015 */
+#if defined(_MSC_VER) && (_MSC_VER >= 1900) /* VS 2015 */
     /* In gcc and in Visual Studio prior to VS 2015 'timezone' is a global
      * variable declared in time.h. That variable was deprecated and in
      * VS 2015 is removed, with _get_timezone replacing it.
@@ -647,7 +647,7 @@ H5_make_time(struct tm *tm)
     /* BSD-like systems */
     the_time += tm->tm_gmtoff;
 #elif defined(H5_HAVE_TIMEZONE)
-#if defined(H5_HAVE_VISUAL_STUDIO) && (_MSC_VER >= 1900) /* VS 2015 */
+#if defined(_MSC_VER) && (_MSC_VER >= 1900) /* VS 2015 */
     /* In gcc and in Visual Studio prior to VS 2015 'timezone' is a global
      * variable declared in time.h. That variable was deprecated and in
      * VS 2015 is removed, with _get_timezone replacing it.
@@ -709,7 +709,7 @@ Wgettimeofday(struct timeval *tv, struct timezone *tz)
     } _now;
 
     static int tzsetflag;
-
+#if 0
     if (tv) {
         GetSystemTimeAsFileTime(&_now.ft);
         tv->tv_usec = (long)((_now.ns100 / 10ULL) % 1000000ULL);
@@ -724,7 +724,7 @@ Wgettimeofday(struct timeval *tv, struct timezone *tz)
         tz->tz_minuteswest = _timezone / 60;
         tz->tz_dsttime     = _daylight;
     }
-
+#endif
     /* Always return 0 as per Open Group Base Specifications Issue 6.
        Do not set errno on error.  */
     return 0;
