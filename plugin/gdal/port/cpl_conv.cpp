@@ -1290,11 +1290,8 @@ int CPLPrintUIntBig( char *pszBuffer, GUIntBig iValue, int nMaxLen )
 
 #if defined(__MSVCRT__) || (defined(WIN32) && defined(_MSC_VER))
     sprintf( szTemp, "%*I64d", nMaxLen, iValue );
-# elif HAVE_LONG_LONG
+# else
     sprintf( szTemp, "%*lld", nMaxLen, (long long) iValue );
-//    sprintf( szTemp, "%*Ld", nMaxLen, (long long) iValue );
-#else
-    sprintf( szTemp, "%*ld", nMaxLen, iValue );
 #endif
 
     return CPLPrintString( pszBuffer, szTemp, nMaxLen );
