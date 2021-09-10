@@ -724,6 +724,10 @@ done:
  *-------------------------------------------------------------------------
  */
 #ifndef H5_HAVE_WIN32_API
+
+#include <dlfcn.h>
+#include <dirent.h>
+
 static htri_t
 H5PL__find(H5PL_type_t plugin_type, int type_id, char *dir, const void **info)
 {
