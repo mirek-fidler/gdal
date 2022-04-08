@@ -94,7 +94,7 @@ The XTIFF open functions are simply for convenience: they call this
 and then pass their parameters on to the appropriate TIFF open function.
 
 <p>This function may be called any number of times safely, since it will
-only register the extension the first time it is called.
+only the extension the first time it is called.
 **/
 
 void XTIFFInitialize(void)

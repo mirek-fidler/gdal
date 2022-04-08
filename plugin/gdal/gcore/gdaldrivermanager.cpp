@@ -486,7 +486,7 @@ int CPL_STDCALL GDALRegisterDriver( GDALDriverH hDriver )
 /************************************************************************/
 
 /**
- * \brief Deregister the passed driver.
+ * \brief Dethe passed driver.
  *
  * If the driver isn't found no change is made.
  *
@@ -524,7 +524,7 @@ void GDALDriverManager::DeregisterDriver( GDALDriver * poDriver )
 /************************************************************************/
 
 /**
- * \brief Deregister the passed driver.
+ * \brief Dethe passed driver.
  *
  * @see GDALDriverManager::GetDeregisterDriver()
  */
@@ -805,7 +805,7 @@ void GDALDriverManager::AutoLoadDrivers()
             
             if( pRegister != NULL )
             {
-                CPLDebug( "GDAL", "Auto register %s using %s.", 
+                CPLDebug( "GDAL", "Auto %s using %s.", 
                           pszFilename, pszFuncName );
 
                 ((void (*)()) pRegister)();

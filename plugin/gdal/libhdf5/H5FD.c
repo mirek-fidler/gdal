@@ -293,7 +293,7 @@ H5FDregister(const H5FD_class_t *cls)
 
     /* Create the new class ID */
     if ((ret_value = H5FD_register(cls, sizeof(H5FD_class_t), TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register file driver ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to file driver ID")
 
 done:
     FUNC_LEAVE_API(ret_value)
@@ -342,7 +342,7 @@ H5FD_register(const void *_cls, size_t size, hbool_t app_ref)
 
     /* Create the new class ID */
     if ((ret_value = H5I_register(H5I_VFL, saved, app_ref)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register file driver ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to file driver ID")
 
 done:
     if (H5I_INVALID_HID == ret_value)
@@ -378,7 +378,7 @@ H5FDunregister(hid_t driver_id)
 
     /* The H5FD_class_t struct will be freed by this function */
     if (H5I_dec_app_ref(driver_id) < 0)
-        HGOTO_ERROR(H5E_VFL, H5E_CANTDEC, FAIL, "unable to unregister file driver")
+        HGOTO_ERROR(H5E_VFL, H5E_CANTDEC, FAIL, "unable to unfile driver")
 
 done:
     FUNC_LEAVE_API(ret_value)

@@ -116,7 +116,7 @@ H5Tvlen_create(hid_t base_id)
 
     /* Atomize the type */
     if ((ret_value = H5I_register(H5I_DATATYPE, dt, TRUE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, FAIL, "unable to register datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, FAIL, "unable to datatype")
 
 done:
     FUNC_LEAVE_API(ret_value)

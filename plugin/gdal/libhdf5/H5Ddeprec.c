@@ -180,7 +180,7 @@ H5Dcreate1(hid_t loc_id, const char *name, hid_t type_id, hid_t space_id, hid_t 
 
     /* Register the new dataset to get an ID for it */
     if ((ret_value = H5I_register(H5I_DATASET, dset, TRUE)) < 0)
-        HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register dataset")
+        HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to dataset")
 
 done:
     if (H5I_INVALID_HID == ret_value)
@@ -252,7 +252,7 @@ H5Dopen1(hid_t loc_id, const char *name)
 
     /* Register an atom for the dataset */
     if ((ret_value = H5I_register(H5I_DATASET, dset, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "can't register dataset atom")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "can't dataset atom")
 
 done:
     if (ret_value < 0) {

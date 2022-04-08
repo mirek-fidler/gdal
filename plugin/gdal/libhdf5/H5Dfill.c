@@ -221,10 +221,10 @@ H5D__fill(const void *fill, const H5T_t *fill_type, void *buf, const H5T_t *buf_
         /* Construct source & destination datatype IDs, if we will need them */
         if (!H5T_path_noop(tpath)) {
             if ((src_id = H5I_register(H5I_DATATYPE, H5T_copy(fill_type, H5T_COPY_ALL), FALSE)) < 0)
-                HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to register types for conversion")
+                HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to types for conversion")
 
             if ((dst_id = H5I_register(H5I_DATATYPE, H5T_copy(buf_type, H5T_COPY_ALL), FALSE)) < 0)
-                HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to register types for conversion")
+                HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to types for conversion")
         } /* end if */
 
         /* If there's VL type of data, make multiple copies of fill value first,
@@ -398,7 +398,7 @@ H5D__fill_init(H5D_fill_buf_info_t *fb_info, void *caller_fill_buf, H5MM_allocat
             if (NULL == (fb_info->mem_type = H5T_copy(dset_type, H5T_COPY_REOPEN)))
                 HGOTO_ERROR(H5E_DATASET, H5E_CANTCOPY, FAIL, "unable to copy file datatype")
             if ((fb_info->mem_tid = H5I_register(H5I_DATATYPE, fb_info->mem_type, FALSE)) < 0)
-                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, FAIL, "unable to register memory datatype")
+                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, FAIL, "unable to memory datatype")
 
             /* Retrieve sizes of memory & file datatypes */
             fb_info->mem_elmt_size = H5T_get_size(fb_info->mem_type);

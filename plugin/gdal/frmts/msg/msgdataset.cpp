@@ -536,7 +536,7 @@ CPLErr MSGRasterBand::IReadBlock( int nBlockXOff, int nBlockYOff,
             // iShift > 0 means upper image moves to the right
           }
           
-          std::auto_ptr< unsigned char > ibuf( new unsigned char[nb_ibytes]);
+          std::unique_ptr< unsigned char > ibuf( new unsigned char[nb_ibytes]);
           
           if (ibuf.get() == 0)
           {

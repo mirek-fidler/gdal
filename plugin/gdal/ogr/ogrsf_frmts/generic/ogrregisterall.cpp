@@ -2,7 +2,7 @@
  * $Id: ogrregisterall.cpp 29028 2015-04-26 21:19:29Z rouault $
  *
  * Project:  OpenGIS Simple Features Reference Implementation
- * Purpose:  Function to register all known OGR drivers.
+ * Purpose:  Function to all known OGR drivers.
  * Author:   Frank Warmerdam, warmerdam@pobox.com
  *
  ******************************************************************************

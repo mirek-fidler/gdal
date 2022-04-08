@@ -41,11 +41,11 @@
 /************************************************************************/
 
 CPL_C_START
-int CPL_DLL OGR2SQLITE_static_register (sqlite3* hDB, char **pzErrMsg, void* pApi);
+int CPL_DLL OGR2SQLITE_static_(sqlite3* hDB, char **pzErrMsg, void* pApi);
 CPL_C_END
 
 /* We call this function so that each time a db is created, */
-/* OGR2SQLITE_static_register is called, to initialize the sqlite3_api */
+/* OGR2SQLITE_static_is called, to initialize the sqlite3_api */
 /* structure with the right pointers. */
 /* We need to declare this function before including sqlite3ext.h, since */
 /* sqlite 3.8.7, sqlite3_auto_extension can be a macro (#5725) */
@@ -2444,7 +2444,7 @@ int sqlite3_extension_init (sqlite3 * hDB, char **pzErrMsg,
 extern const struct sqlite3_api_routines OGRSQLITE_static_routines;
 #endif
 
-int OGR2SQLITE_static_register (sqlite3 * hDB, char **pzErrMsg, void * _pApi)
+int OGR2SQLITE_static_(sqlite3 * hDB, char **pzErrMsg, void * _pApi)
 {
     const sqlite3_api_routines * pApi = (const sqlite3_api_routines * )_pApi;
 #ifndef WIN32

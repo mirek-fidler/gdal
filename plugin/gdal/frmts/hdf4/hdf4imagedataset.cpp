@@ -1496,7 +1496,7 @@ Metadata:
   sensor=MODIS
   origin=USDOC/NOAA/NESDIS CoastWatch
   history=PGE01:4.1.12;PGE02:4.3.1.12;SeaDAS Version ?.?, MSl12 4.0.2, Linux 2.4.21-27.0.1.EL
-cwregister GulfOfMexicoSinusoidal.hdf MODSCW.P2005023.1835.swath09.hdf MODSCW.P2005023.1835.GM16.mapped09.hdf
+cwGulfOfMexicoSinusoidal.hdf MODSCW.P2005023.1835.swath09.hdf MODSCW.P2005023.1835.GM16.mapped09.hdf
 cwgraphics MODSCW.P2005023.1835.GM16.closest.hdf
 cwmath --template chlor_a --expr chlor_a=select(and(l2_flags,514)!=0,nan,chlor_a) /data/aps/browse/lvl3/seadas/coastwatch/hdf/MODSCW_P2005023_1835_GM16_closest.hdf /data/aps/browse/lvl3/seadas/coastwatch/maskhdf/MODSCW_P2005023_1835_GM16_closest_chlora.hdf
 cwmath --template latitude --expr latitude=latitude /data/aps/browse/lvl3/seadas/coastwatch/hdf/MODSCW_P2005023_1835_GM16_closest.hdf /data/aps/browse/lvl3/seadas/coastwatch/maskhdf/MODSCW_P2005023_1835_GM16_closest_chlora.hdf

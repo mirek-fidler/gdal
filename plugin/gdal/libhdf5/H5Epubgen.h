@@ -254,7 +254,7 @@ H5_DLLVAR hid_t H5E_MOUNT_g;         /* File mount error */
 #define H5E_NOIDS            (H5OPEN H5E_NOIDS_g)
 H5_DLLVAR hid_t H5E_BADATOM_g;       /* Unable to find atom information (already closed?) */
 H5_DLLVAR hid_t H5E_BADGROUP_g;      /* Unable to find ID group information */
-H5_DLLVAR hid_t H5E_CANTREGISTER_g;  /* Unable to register new atom */
+H5_DLLVAR hid_t H5E_CANTREGISTER_g;  /* Unable to new atom */
 H5_DLLVAR hid_t H5E_CANTINC_g;       /* Unable to increment reference count */
 H5_DLLVAR hid_t H5E_CANTDEC_g;       /* Unable to decrement reference count */
 H5_DLLVAR hid_t H5E_NOIDS_g;         /* Out of IDs for group */

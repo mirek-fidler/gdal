@@ -485,7 +485,7 @@ H5F_super_init(H5F_t *f, hid_t dxpl_id)
             HGOTO_ERROR(H5E_FILE, H5E_CANTCREATE, FAIL, "unable to create superblock extension")
         ext_created = TRUE;
 
-        /* Create the Shared Object Header Message table and register it with
+        /* Create the Shared Object Header Message table and it with
          *      the metadata cache, if this file supports shared messages.
          */
         if (f->shared->sohm_nindexes > 0) {

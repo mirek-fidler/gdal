@@ -85,23 +85,23 @@ H5Z_init_interface(void)
 
     /* Internal filters */
     if (H5Z_register(H5Z_SHUFFLE) < 0)
-        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register shuffle filter")
+        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to shuffle filter")
     if (H5Z_register(H5Z_FLETCHER32) < 0)
-        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register fletcher32 filter")
+        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to fletcher32 filter")
     if (H5Z_register(H5Z_NBIT) < 0)
-        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register nbit filter")
+        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to nbit filter")
     if (H5Z_register(H5Z_SCALEOFFSET) < 0)
-        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register scaleoffset filter")
+        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to scaleoffset filter")
 
         /* External filters */
 #ifdef H5_HAVE_FILTER_DEFLATE
     if (H5Z_register(H5Z_DEFLATE) < 0)
-        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register deflate filter")
+        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to deflate filter")
 #endif /* H5_HAVE_FILTER_DEFLATE */
 #ifdef H5_HAVE_FILTER_SZIP
     H5Z_SZIP->encoder_present = SZ_encoder_enabled();
     if (H5Z_register(H5Z_SZIP) < 0)
-        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register szip filter")
+        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to szip filter")
 #endif /* H5_HAVE_FILTER_SZIP */
 
 done:
@@ -247,7 +247,7 @@ H5Zregister(const void *cls)
 
     /* Do it */
     if (H5Z_register(cls_real) < 0)
-        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register filter")
+        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to filter")
 
 done:
     FUNC_LEAVE_API(ret_value)
@@ -340,7 +340,7 @@ H5Zunregister(H5Z_filter_t id)
 
     /* Do it */
     if (H5Z_unregister(id) < 0)
-        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to unregister filter")
+        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to unfilter")
 
 done:
     FUNC_LEAVE_API(ret_value)
@@ -386,7 +386,7 @@ H5Z_unregister(H5Z_filter_t filter_id)
 
     if (object.found)
         HGOTO_ERROR(H5E_PLINE, H5E_CANTRELEASE, FAIL,
-                    "can't unregister filter because a dataset is still using it")
+                    "can't unfilter because a dataset is still using it")
 
     /* Iterate through all opened groups, returns a failure if any of them uses the filter */
     if (H5I_iterate(H5I_GROUP, H5Z__check_unregister_group_cb, &object, FALSE) < 0)
@@ -394,7 +394,7 @@ H5Z_unregister(H5Z_filter_t filter_id)
 
     if (object.found)
         HGOTO_ERROR(H5E_PLINE, H5E_CANTRELEASE, FAIL,
-                    "can't unregister filter because a group is still using it")
+                    "can't unfilter because a group is still using it")
 
     /* Iterate through all opened files and flush them */
     if (H5I_iterate(H5I_FILE, H5Z__flush_file_cb, NULL, FALSE) < 0)
@@ -480,7 +480,7 @@ H5Z__check_unregister_group_cb(void *obj_ptr, hid_t H5_ATTR_UNUSED obj_id, void 
         HGOTO_ERROR(H5E_PLINE, H5E_CANTGET, FAIL, "can't check filter in pipeline")
 
     /* H5I_iterate expects TRUE to stop the loop over objects. Stop the loop and
-     * let H5Z_unregister return failure.
+     * let H5Z_unreturn failure.
      */
     if (filter_in_pline) {
         object->found = TRUE;
@@ -530,7 +530,7 @@ H5Z__check_unregister_dset_cb(void *obj_ptr, hid_t H5_ATTR_UNUSED obj_id, void *
         HGOTO_ERROR(H5E_PLINE, H5E_CANTGET, FAIL, "can't check filter in pipeline")
 
     /* H5I_iterate expects TRUE to stop the loop over objects. Stop the loop and
-     * let H5Z_unregister return failure.
+     * let H5Z_unreturn failure.
      */
     if (filter_in_pline) {
         object->found = TRUE;
@@ -627,7 +627,7 @@ H5Z_filter_avail(H5Z_filter_t id)
 
     if (NULL != (filter_info = (const H5Z_class2_t *)H5PL_load(H5PL_TYPE_FILTER, (int)id))) {
         if (H5Z_register(filter_info) < 0)
-            HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register loaded filter")
+            HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to loaded filter")
         HGOTO_DONE(TRUE)
     }
 done:
@@ -775,7 +775,7 @@ H5Z_prepare_prelude_callback_dcpl(hid_t dcpl_id, hid_t type_id, H5Z_prelude_type
                 /* Get ID for dataspace to pass to filter routines */
                 if ((space_id = H5I_register(H5I_DATASPACE, space, FALSE)) < 0) {
                     (void)H5S_close(space);
-                    HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register dataspace ID")
+                    HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to dataspace ID")
                 }
 
                 /* Make the callbacks */
@@ -1189,7 +1189,7 @@ H5Z_pipeline(const H5O_pline_t *pline, unsigned flags, unsigned *filter_mask /*i
 
             /* If the filter isn't registered and the application doesn't
              * indicate no plugin through HDF5_PRELOAD_PLUG (using the symbol "::"),
-             * try to load it dynamically and register it.  Otherwise, return failure
+             * try to load it dynamically and it.  Otherwise, return failure
              */
             if ((fclass_idx = H5Z_find_idx(pline->filter[idx].id)) < 0) {
                 hbool_t issue_error = FALSE;
@@ -1201,7 +1201,7 @@ H5Z_pipeline(const H5O_pline_t *pline, unsigned flags, unsigned *filter_mask /*i
                                                                            (int)(pline->filter[idx].id)))) {
                     /* Register the filter we loaded */
                     if (H5Z_register(filter_info) < 0)
-                        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to register filter")
+                        HGOTO_ERROR(H5E_PLINE, H5E_CANTINIT, FAIL, "unable to filter")
 
                     /* Search in the table of registered filters again to find the dynamic filter just loaded
                      * and registered */

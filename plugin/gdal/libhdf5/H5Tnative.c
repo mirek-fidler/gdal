@@ -114,7 +114,7 @@ H5Tget_native_type(hid_t type_id, H5T_direction_t direction)
 
     /* Get an ID for the new type */
     if ((ret_value = H5I_register(H5I_DATATYPE, new_dt, TRUE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register data type")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to data type")
 
 done:
     /* Error cleanup */
@@ -368,9 +368,9 @@ H5T_get_native_type(H5T_t *dtype, H5T_direction_t direction, size_t *struct_alig
                 HGOTO_ERROR(H5E_ARGS, H5E_BADTYPE, NULL, "base native type retrieval failed")
 
             if ((super_type_id = H5I_register(H5I_DATATYPE, super_type, FALSE)) < 0)
-                HGOTO_ERROR(H5E_ARGS, H5E_BADTYPE, NULL, "cannot register datatype")
+                HGOTO_ERROR(H5E_ARGS, H5E_BADTYPE, NULL, "cannot datatype")
             if ((nat_super_type_id = H5I_register(H5I_DATATYPE, nat_super_type, FALSE)) < 0)
-                HGOTO_ERROR(H5E_ARGS, H5E_BADTYPE, NULL, "cannot register datatype")
+                HGOTO_ERROR(H5E_ARGS, H5E_BADTYPE, NULL, "cannot datatype")
 
             /* Allocate room for the enum values */
             if (NULL == (tmp_memb_value = H5MM_calloc(H5T_get_size(super_type))))

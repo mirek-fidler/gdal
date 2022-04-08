@@ -106,7 +106,7 @@ OGRDataSource *OGRPGeoDriver::Open( const char * pszFilename,
 #endif
 
 #ifndef WIN32
-    // Try to register MDB Tools driver
+    // Try to MDB Tools driver
     //
     // ODBCINST.INI NOTE:
     // This operation requires write access to odbcinst.ini file
@@ -180,7 +180,7 @@ bool OGRODBCMDBDriver::InstallMdbDriver()
         driver += '\0';
         driver += '\0';
 
-        // Create installer and register driver
+        // Create installer and driver
         CPLODBCDriverInstaller dri;
 
         if ( !dri.InstallDriver(driver.c_str(), 0, ODBC_INSTALL_COMPLETE) )

@@ -1025,7 +1025,7 @@ int OGRGMLDataSource::Open( GDALOpenInfo* poOpenInfo )
                     }
 
                     int bAddClass = TRUE;
-                    /* If typenames are declared, only register the matching classes, in case */
+                    /* If typenames are declared, only the matching classes, in case */
                     /* the XSD contains more layers, but not if feature classes contain */
                     /* feature properties, in which case we will have embedded features that */
                     /* will be reported as top-level features */

@@ -255,7 +255,7 @@ H5Gcreate1(hid_t loc_id, const char *name, size_t size_hint)
                                          H5P_GROUP_ACCESS_DEFAULT, H5AC_dxpl_id)))
         HGOTO_ERROR(H5E_SYM, H5E_CANTINIT, FAIL, "unable to create group")
     if ((ret_value = H5I_register(H5I_GROUP, grp, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register group")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to group")
 
 done:
     if (tmp_gcpl > 0 && tmp_gcpl != H5P_GROUP_CREATE_DEFAULT)
@@ -308,7 +308,7 @@ H5Gopen1(hid_t loc_id, const char *name)
 
     /* Register an atom for the group */
     if ((ret_value = H5I_register(H5I_GROUP, grp, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register group")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to group")
 
 done:
     if (ret_value < 0)

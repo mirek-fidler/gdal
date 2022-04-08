@@ -450,20 +450,20 @@ H5P_init_interface(void)
                                  lib_class->close_data)))
                     HGOTO_ERROR(H5E_PLIST, H5E_CANTINIT, FAIL, "class initialization failed")
 
-                /* Call routine to register properties for class */
+                /* Call routine to properties for class */
                 if (lib_class->reg_prop_func && (*lib_class->reg_prop_func)(*lib_class->pclass) < 0)
-                    HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL, "can't register properties")
+                    HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL, "can't properties")
 
                 /* Register the new class */
                 if ((*lib_class->class_id = H5I_register(H5I_GENPROP_CLS, *lib_class->pclass, FALSE)) < 0)
-                    HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL, "can't register property list class")
+                    HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL, "can't property list class")
 
-                /* Only register the default property list if it hasn't been created yet */
+                /* Only the default property list if it hasn't been created yet */
                 if (lib_class->def_plist_id && *lib_class->def_plist_id == (-1)) {
                     /* Register the default property list for the new class*/
                     if ((*lib_class->def_plist_id = H5P_create_id(*lib_class->pclass, FALSE)) < 0)
                         HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL,
-                                    "can't register default property list for class")
+                                    "can't default property list for class")
                 } /* end if */
 
                 /* Increment class initialization counters */
@@ -1778,7 +1778,7 @@ done:
  NAME
     H5P_register_real
  PURPOSE
-    Internal routine to register a new property in a property list class.
+    Internal routine to a new property in a property list class.
  USAGE
     herr_t H5P_register_real(class, name, size, default, prp_create, prp_set, prp_get, prp_close)
         H5P_genclass_t *class;  IN: Property list class to modify
@@ -1976,7 +1976,7 @@ done:
  NAME
     H5P_register
  PURPOSE
-    Internal routine to register a new property in a property list class.
+    Internal routine to a new property in a property list class.
  USAGE
     herr_t H5P_register(class, name, size, default, prp_create, prp_set, prp_get, prp_close)
         H5P_genclass_t **class; IN: Property list class to modify
@@ -2181,10 +2181,10 @@ H5P_register(H5P_genclass_t **ppclass, const char *name, size_t size, const void
         pclass = new_class;
     } /* end if */
 
-    /* Really register the property in the class */
+    /* Really the property in the class */
     if (H5P_register_real(pclass, name, size, def_value, prp_create, prp_set, prp_get, prp_delete, prp_copy,
                           prp_cmp, prp_close) < 0)
-        HGOTO_ERROR(H5E_PLIST, H5E_CANTCREATE, FAIL, "can't register property")
+        HGOTO_ERROR(H5E_PLIST, H5E_CANTCREATE, FAIL, "can't property")
 
     /* Update pointer to pointer to class, if a new one was generated */
     if (new_class)

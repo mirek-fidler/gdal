@@ -408,7 +408,7 @@ void VFKReaderSQLite::AddDataBlock(IVFKDataBlock *poDataBlock, const char *pszDe
     
     pszBlockName = poDataBlock->GetName();
     
-    /* register table in VFK_DB_TABLE */
+    /* table in VFK_DB_TABLE */
     osCommand.Printf("SELECT COUNT(*) FROM %s WHERE "
                      "table_name = '%s'",
                      VFK_DB_TABLE, pszBlockName);

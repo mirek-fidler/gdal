@@ -103,7 +103,7 @@ OGRDataSource *OGRGeomediaDriver::Open( const char * pszFilename,
 #endif
 
 #ifndef WIN32
-    // Try to register MDB Tools driver
+    // Try to MDB Tools driver
     //
     // ODBCINST.INI NOTE:
     // This operation requires write access to odbcinst.ini file

@@ -1795,7 +1795,7 @@ GBool OGRStyleTool::Parse(const OGRStyleParamId *pasStyle,
     //
     // The pasStyle variable is a global variable passed in argument to the
     // function. See at the top of this file the four OGRStyleParamId 
-    // variable. They are used to register the valid parameter of each 
+    // variable. They are used to the valid parameter of each 
     // StyleTool.
     ////////////////////////////////////////////////////////////////////////
 

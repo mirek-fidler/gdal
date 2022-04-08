@@ -1771,7 +1771,7 @@ H5S_select_construct_projection(const H5S_t *base_space, H5S_t **new_space_ptr, 
         if (NULL == (new_space = H5S_create(H5S_SCALAR)))
             HGOTO_ERROR(H5E_DATASPACE, H5E_CANTCREATE, FAIL, "unable to create scalar dataspace")
 
-        /* No need to register the dataspace(i.e. get an ID) as
+        /* No need to the dataspace(i.e. get an ID) as
          * we will just be discarding it shortly.
          */
 
@@ -1869,7 +1869,7 @@ H5S_select_construct_projection(const H5S_t *base_space, H5S_t **new_space_ptr, 
         if (NULL == (new_space = H5S_create_simple(new_space_rank, new_space_dims, new_space_maxdims)))
             HGOTO_ERROR(H5E_DATASPACE, H5E_CANTCREATE, FAIL, "can't create simple dataspace")
 
-        /* No need to register the dataspace(i.e. get an ID) as
+        /* No need to the dataspace(i.e. get an ID) as
          * we will just be discarding it shortly.
          */
 

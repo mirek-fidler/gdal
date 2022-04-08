@@ -270,7 +270,7 @@ OGRLineString * OGRWAsPLayer::Simplify( const OGRLineString & line ) const
     if ( !line.getNumPoints() ) 
         return  static_cast<OGRLineString *>( line.clone() );
 
-    std::auto_ptr< OGRLineString > poLine( 
+    std::unique_ptr< OGRLineString > poLine( 
         static_cast<OGRLineString *>(
             pdfTolerance.get() && *pdfTolerance > 0
             ? line.Simplify( *pdfTolerance ) 
@@ -284,7 +284,7 @@ OGRLineString * OGRWAsPLayer::Simplify( const OGRLineString & line ) const
     if ( pdfAdjacentPointTolerance.get() && *pdfAdjacentPointTolerance > 0)
     {
         /* remove consecutive points that are too close */
-        std::auto_ptr< OGRLineString > newLine( new OGRLineString );
+        std::unique_ptr< OGRLineString > newLine( new OGRLineString );
         const double dist = *pdfAdjacentPointTolerance;
         OGRPoint pt;
         poLine->StartPoint( &pt );
@@ -379,7 +379,7 @@ OGRLineString * OGRWAsPLayer::Simplify( const OGRLineString & line ) const
 OGRErr OGRWAsPLayer::WriteElevation( OGRLineString * poGeom, const double & dfZ )
 
 {
-    std::auto_ptr< OGRLineString > poLine( Simplify( *poGeom ) );
+    std::unique_ptr< OGRLineString > poLine( Simplify( *poGeom ) );
     
     const int iNumPoints = poLine->getNumPoints();
     if ( !iNumPoints ) return OGRERR_NONE; /* empty geom */
@@ -553,7 +553,7 @@ OGRErr OGRWAsPLayer::WriteRoughness( OGRPolygon * poGeom, const double & dfZ )
 OGRErr OGRWAsPLayer::WriteRoughness( OGRLineString * poGeom, const double & dfZleft,  const double & dfZright )
 
 {
-    std::auto_ptr< OGRLineString > poLine( Simplify( *poGeom ) );
+    std::unique_ptr< OGRLineString > poLine( Simplify( *poGeom ) );
 
     const int iNumPoints = poLine->getNumPoints();
     if ( !iNumPoints ) return OGRERR_NONE; /* empty geom */
@@ -788,7 +788,7 @@ OGRFeature *OGRWAsPLayer::GetNextRawFeature()
         return NULL;
     }
 
-    std::auto_ptr< OGRFeature > poFeature( new OGRFeature( poLayerDefn ) );
+    std::unique_ptr< OGRFeature > poFeature( new OGRFeature( poLayerDefn ) );
     poFeature->SetFID( ++iFeatureCount );
     for ( int i=0; i<iNumValues-1; i++ ) poFeature->SetField( i, dfValues[i] );
 
@@ -807,7 +807,7 @@ OGRFeature *OGRWAsPLayer::GetNextRawFeature()
         CPLError(CE_Failure, CPLE_FileIO, "No enough values for linestring" );
         return NULL;
     }
-    std::auto_ptr< OGRLineString > poLine( new OGRLineString );
+    std::unique_ptr< OGRLineString > poLine( new OGRLineString );
     poLine->setCoordinateDimension(3);
     poLine->assignSpatialReference( poSpatialReference );
     for ( int i=0; i<iNumValuesToRead; i+=2 )

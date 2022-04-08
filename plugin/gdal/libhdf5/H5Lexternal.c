@@ -611,7 +611,7 @@ H5L_register_external(void)
     FUNC_ENTER_NOAPI(FAIL)
 
     if (H5L_register(H5L_EXTERN_LINK_CLASS) < 0)
-        HGOTO_ERROR(H5E_LINK, H5E_NOTREGISTERED, FAIL, "unable to register external link class")
+        HGOTO_ERROR(H5E_LINK, H5E_NOTREGISTERED, FAIL, "unable to external link class")
 
 done:
     FUNC_LEAVE_NOAPI(ret_value)

@@ -64,7 +64,7 @@ CPL_C_END
             During a IRasterIO() query,
             i) we will do a SQL query to retrieve the PKID of tiles that intersect the query window.
             ii) If some tiles are not registered as sources, then do a SQL query to fetch their metadata
-            and instanciate them and register them.
+            and instanciate them and them.
             iii) If some tiles are not cached, then determine if the query window is not too big (w.r.t. GDAL cache),
             and if not, then do a SQL query to fetch their raster column.
 
@@ -2064,7 +2064,7 @@ GBool PostGISRasterDataset::SetRasterProperties
             ReportError(CE_Warning, CPLE_AppDefined, "Cannot find "
             "information about %s.%s table in raster_columns view. The "
             "raster table load would take a lot of time. Please, "
-            "execute AddRasterConstraints PostGIS function to register "
+            "execute AddRasterConstraints PostGIS function to "
             "this table as raster table in raster_columns view. This "
             "will save a lot of time.", pszSchema, pszTable);
             
@@ -2084,7 +2084,7 @@ GBool PostGISRasterDataset::SetRasterProperties
             ReportError(CE_Warning, CPLE_AppDefined, "Cannot find (valid) "
             "information about %s.%s table in raster_columns view. The "
             "raster table load would take a lot of time. Please, "
-            "execute AddRasterConstraints PostGIS function to register "
+            "execute AddRasterConstraints PostGIS function to "
             "this table as raster table in raster_columns view. This "
             "will save a lot of time.", pszSchema, pszTable);
             
@@ -2099,7 +2099,7 @@ GBool PostGISRasterDataset::SetRasterProperties
             ReportError(CE_Failure, CPLE_AppDefined, "Cannot find "
             "information about %s.%s table in raster_columns view. "
             "Please, execute AddRasterConstraints PostGIS function to "
-            "register this table as raster table in raster_columns "
+            "this table as raster table in raster_columns "
             "view. This will save a lot of time. As alternative, "
             "provide configuration option "
             "PR_ALLOW_WHOLE_TABLE_SCAN=YES. With this option, the "

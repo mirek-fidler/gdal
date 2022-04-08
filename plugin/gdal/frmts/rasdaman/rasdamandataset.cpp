@@ -284,7 +284,7 @@ r_Ref<r_GMarray>& RasdamanDataset::request_array(const Subset& subset, int& offs
   }
   
   r_Ref<r_GMarray> result_array = r_Ref<r_GMarray>(*result_set.create_iterator());
-  //std::auto_ptr<r_GMarray> ptr(new r_GMarray);
+  //std::unique_ptr<r_GMarray> ptr(new r_GMarray);
   //r_GMarray* ptr_ = ptr.get();
   //(*ptr) = *result_array;
   //std::pair<ArrayCache::iterator, bool> inserted = m_array_cache.insert(ArrayCache::value_type(subset, ptr));

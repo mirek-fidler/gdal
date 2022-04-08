@@ -112,7 +112,7 @@ struct H5P_genplist_t {
     H5SL_t *        props;      /* Skip list containing properties */
 };
 
-/* Function pointer for library classes with properties to register */
+/* Function pointer for library classes with properties to */
 typedef herr_t (*H5P_init_class_op_t)(H5P_genclass_t *pclass);
 typedef herr_t (*H5P_reg_prop_func_t)(H5P_genclass_t *pclass);
 

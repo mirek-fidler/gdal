@@ -1852,7 +1852,7 @@ static void CPLVirtualMemManagerThread(void* unused_param)
                             ctxt->pCbkUserData);
 
                     /* Now remap this page to its target address and */
-                    /* register it in the LRU */
+                    /* it in the LRU */
                     CPLVirtualMemAddPage(ctxt, start_page_addr, pPageToFill,
                                       msg.opType, msg.hRequesterThread);
                 }

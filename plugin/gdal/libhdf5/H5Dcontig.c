@@ -1325,7 +1325,7 @@ H5D__contig_copy(H5F_t *f_src, const H5O_storage_contig_t *storage_src, H5F_t *f
      * but this ensures that the src datatype will be freed.
      */
     if ((tid_src = H5I_register(H5I_DATATYPE, dt_src, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, FAIL, "unable to register source file datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, FAIL, "unable to source file datatype")
 
     /* If there's a VLEN source datatype, set up type conversion information */
     if (H5T_detect_class(dt_src, H5T_VLEN, FALSE) > 0) {
@@ -1334,7 +1334,7 @@ H5D__contig_copy(H5F_t *f_src, const H5O_storage_contig_t *storage_src, H5F_t *f
             HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "unable to copy")
         if ((tid_mem = H5I_register(H5I_DATATYPE, dt_mem, FALSE)) < 0) {
             H5T_close(dt_mem);
-            HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to register memory datatype")
+            HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to memory datatype")
         } /* end if */
 
         /* create variable-length datatype at the destinaton file */
@@ -1346,7 +1346,7 @@ H5D__contig_copy(H5F_t *f_src, const H5O_storage_contig_t *storage_src, H5F_t *f
         } /* end if */
         if ((tid_dst = H5I_register(H5I_DATATYPE, dt_dst, FALSE)) < 0) {
             H5T_close(dt_dst);
-            HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to register destination file datatype")
+            HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to destination file datatype")
         } /* end if */
 
         /* Set up the conversion functions */
@@ -1387,7 +1387,7 @@ H5D__contig_copy(H5F_t *f_src, const H5O_storage_contig_t *storage_src, H5F_t *f
         /* Atomize */
         if ((buf_sid = H5I_register(H5I_DATASPACE, buf_space, FALSE)) < 0) {
             H5S_close(buf_space);
-            HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register dataspace ID")
+            HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to dataspace ID")
         } /* end if */
 
         /* Set flag to do type conversion */

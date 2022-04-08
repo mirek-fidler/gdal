@@ -221,7 +221,7 @@ H5AC_init_interface(void)
 
     /* Get an ID for the collective H5AC dxpl */
     if ((H5AC_dxpl_id = H5P_create_id(H5P_CLS_DATASET_XFER_g, FALSE)) < 0)
-        HGOTO_ERROR(H5E_CACHE, H5E_CANTCREATE, FAIL, "unable to register property list")
+        HGOTO_ERROR(H5E_CACHE, H5E_CANTCREATE, FAIL, "unable to property list")
 
     /* Get the property list object */
     if (NULL == (xfer_plist = (H5P_genplist_t *)H5I_object(H5AC_dxpl_id)))
@@ -235,7 +235,7 @@ H5AC_init_interface(void)
 
     /* Get an ID for the independent H5AC dxpl */
     if ((H5AC_ind_dxpl_id = H5P_create_id(H5P_CLS_DATASET_XFER_g, FALSE)) < 0)
-        HGOTO_ERROR(H5E_CACHE, H5E_CANTCREATE, FAIL, "unable to register property list")
+        HGOTO_ERROR(H5E_CACHE, H5E_CANTCREATE, FAIL, "unable to property list")
 
     /* Get the property list object */
     if (NULL == (H5AC_ind_dxpl_g = (H5P_genplist_t *)H5I_object(H5AC_ind_dxpl_id)))

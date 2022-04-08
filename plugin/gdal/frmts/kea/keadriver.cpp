@@ -34,7 +34,7 @@ CPL_C_START
 void CPL_DLL GDALRegister_KEA(void);
 CPL_C_END
 
-// method to register this driver
+// method to this driver
 void GDALRegister_KEA()
 {
     GDALDriver  *poDriver;

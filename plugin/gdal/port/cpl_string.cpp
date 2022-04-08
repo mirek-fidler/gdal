@@ -2402,7 +2402,7 @@ GByte *CPLHexToBinary( const char *pszHex, int *pnBytes )
 {
     size_t  nHexLen = strlen(pszHex);
     size_t i;
-    register unsigned char h1, h2;
+    unsigned char h1, h2;
     GByte *pabyWKB; 
 
     pabyWKB = (GByte *) CPLMalloc(nHexLen / 2 + 2);

@@ -5947,7 +5947,7 @@ void GDALRegister_netCDF()
         poDriver->SetMetadataItem( "GDAL_HAS_HDF5", "YES" );
 #endif
  
-        /* set pfns and register driver */
+        /* set pfns and driver */
         poDriver->pfnOpen = netCDFDataset::Open;
         poDriver->pfnCreateCopy = netCDFDataset::CreateCopy;
         poDriver->pfnCreate = netCDFDataset::Create;

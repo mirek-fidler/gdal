@@ -257,7 +257,7 @@ H5Screate(H5S_class_t type)
 
     /* Atomize */
     if ((ret_value = H5I_register(H5I_DATASPACE, new_ds, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register dataspace atom")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to dataspace atom")
 
 done:
     if (ret_value < 0)
@@ -402,7 +402,7 @@ H5Scopy(hid_t space_id)
 
     /* Atomize */
     if ((ret_value = H5I_register(H5I_DATASPACE, dst, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register dataspace atom")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to dataspace atom")
 
 done:
     if (H5I_INVALID_HID == ret_value)
@@ -1276,7 +1276,7 @@ H5Screate_simple(int rank, const hsize_t dims[/*rank*/], const hsize_t maxdims[/
 
     /* Atomize */
     if ((ret_value = H5I_register(H5I_DATASPACE, space, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register dataspace ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to dataspace ID")
 
 done:
     if (ret_value < 0)
@@ -1458,7 +1458,7 @@ H5Sdecode(const void *buf)
 
     /* Register the type and return the ID */
     if ((ret_value = H5I_register(H5I_DATASPACE, ds, TRUE)) < 0)
-        HGOTO_ERROR(H5E_DATASPACE, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register dataspace")
+        HGOTO_ERROR(H5E_DATASPACE, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to dataspace")
 
 done:
     FUNC_LEAVE_API(ret_value)

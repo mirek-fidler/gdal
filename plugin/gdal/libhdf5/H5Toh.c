@@ -132,7 +132,7 @@ H5O_dtype_open(const H5G_loc_t *obj_loc, hid_t H5_ATTR_UNUSED lapl_id, hid_t dxp
 
     /* Register an ID for the datatype */
     if ((ret_value = H5I_register(H5I_DATATYPE, type, app_ref)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register datatype")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to datatype")
 
 done:
     if (ret_value < 0)

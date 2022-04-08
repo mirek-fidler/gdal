@@ -67,7 +67,7 @@ OGRDataSource *OGRWalkDriver::Open( const char * pszFilename, int bUpdate )
         return NULL;
 
 #ifndef WIN32
-    // Try to register MDB Tools driver
+    // Try to MDB Tools driver
     //
     // ODBCINST.INI NOTE:
     // This operation requires write access to odbcinst.ini file

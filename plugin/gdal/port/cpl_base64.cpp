@@ -100,7 +100,7 @@ int CPLBase64DecodeInPlace(GByte* pszBase64)
         }
 
         for (k=0; k<j; k+=4) {
-            register unsigned char b1, b2, b3, b4, c3, c4;
+            unsigned char b1, b2, b3, b4, c3, c4;
 
             b1 = CPLBase64DecodeChar[pszBase64[k]];
 

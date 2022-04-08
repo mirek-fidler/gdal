@@ -171,7 +171,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_SCHAR_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_SCHAR_ALIGN_g = 1;
     H5T_NATIVE_SCHAR_COMP_ALIGN_g = 1;
 
@@ -192,7 +192,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UCHAR_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UCHAR_ALIGN_g = 1;
 
    /*
@@ -212,7 +212,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_SHORT_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_SHORT_ALIGN_g = 1;
     H5T_NATIVE_SHORT_COMP_ALIGN_g = 2;
 
@@ -233,7 +233,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_USHORT_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_USHORT_ALIGN_g = 1;
 
    /*
@@ -253,7 +253,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_ALIGN_g = 1;
     H5T_NATIVE_INT_COMP_ALIGN_g = 4;
 
@@ -274,7 +274,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_ALIGN_g = 1;
 
    /*
@@ -296,7 +296,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_LONG_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_LONG_ALIGN_g = 1;
     H5T_NATIVE_LONG_COMP_ALIGN_g = 8;
 
@@ -319,7 +319,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_ULONG_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_ULONG_ALIGN_g = 1;
 
    /*
@@ -339,7 +339,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT8_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT8_ALIGN_g = 1;
 
    /*
@@ -359,7 +359,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT8_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT8_ALIGN_g = 1;
 
    /*
@@ -379,7 +379,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_LEAST8_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_LEAST8_ALIGN_g = 1;
 
    /*
@@ -399,7 +399,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_LEAST8_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_LEAST8_ALIGN_g = 1;
 
    /*
@@ -419,7 +419,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_FAST8_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_FAST8_ALIGN_g = 1;
 
    /*
@@ -439,7 +439,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_FAST8_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_FAST8_ALIGN_g = 1;
 
    /*
@@ -459,7 +459,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT16_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT16_ALIGN_g = 1;
 
    /*
@@ -479,7 +479,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT16_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT16_ALIGN_g = 1;
 
    /*
@@ -499,7 +499,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_LEAST16_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_LEAST16_ALIGN_g = 1;
 
    /*
@@ -519,7 +519,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_LEAST16_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_LEAST16_ALIGN_g = 1;
 
    /*
@@ -541,7 +541,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_FAST16_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_FAST16_ALIGN_g = 1;
 
    /*
@@ -563,7 +563,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_FAST16_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_FAST16_ALIGN_g = 1;
 
    /*
@@ -583,7 +583,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT32_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT32_ALIGN_g = 1;
 
    /*
@@ -603,7 +603,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT32_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT32_ALIGN_g = 1;
 
    /*
@@ -623,7 +623,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_LEAST32_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_LEAST32_ALIGN_g = 1;
 
    /*
@@ -643,7 +643,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_LEAST32_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_LEAST32_ALIGN_g = 1;
 
    /*
@@ -665,7 +665,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_FAST32_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_FAST32_ALIGN_g = 1;
 
    /*
@@ -687,7 +687,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_FAST32_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_FAST32_ALIGN_g = 1;
 
    /*
@@ -709,7 +709,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT64_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT64_ALIGN_g = 1;
 
    /*
@@ -731,7 +731,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT64_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT64_ALIGN_g = 1;
 
    /*
@@ -753,7 +753,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_LEAST64_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_LEAST64_ALIGN_g = 1;
 
    /*
@@ -775,7 +775,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_LEAST64_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_LEAST64_ALIGN_g = 1;
 
    /*
@@ -797,7 +797,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_INT_FAST64_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_INT_FAST64_ALIGN_g = 1;
 
    /*
@@ -819,7 +819,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_UINT_FAST64_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_UINT_FAST64_ALIGN_g = 1;
 
    /*
@@ -841,7 +841,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_2;
     if((H5T_NATIVE_LLONG_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_LLONG_ALIGN_g = 1;
     H5T_NATIVE_LLONG_COMP_ALIGN_g = 8;
 
@@ -864,7 +864,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.msb_pad = H5T_PAD_ZERO;
     dt->shared->u.atomic.u.i.sign = H5T_SGN_NONE;
     if((H5T_NATIVE_ULLONG_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_ULLONG_ALIGN_g = 1;
 
    /*
@@ -892,7 +892,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.u.f.norm = H5T_NORM_IMPLIED;
     dt->shared->u.atomic.u.f.pad = H5T_PAD_ZERO;
     if((H5T_NATIVE_FLOAT_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_FLOAT_ALIGN_g = 1;
     H5T_NATIVE_FLOAT_COMP_ALIGN_g = 4;
 
@@ -923,7 +923,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.u.f.norm = H5T_NORM_IMPLIED;
     dt->shared->u.atomic.u.f.pad = H5T_PAD_ZERO;
     if((H5T_NATIVE_DOUBLE_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_DOUBLE_ALIGN_g = 1;
     H5T_NATIVE_DOUBLE_COMP_ALIGN_g = 8;
 
@@ -958,7 +958,7 @@ H5TN_init_interface(void)
     dt->shared->u.atomic.u.f.norm = H5T_NORM_NONE;
     dt->shared->u.atomic.u.f.pad = H5T_PAD_ZERO;
     if((H5T_NATIVE_LDOUBLE_g = H5I_register(H5I_DATATYPE, dt, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't register ID for built-in datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "can't ID for built-in datatype")
     H5T_NATIVE_LDOUBLE_ALIGN_g = 1;
     H5T_NATIVE_LDOUBLE_COMP_ALIGN_g = 16;
 

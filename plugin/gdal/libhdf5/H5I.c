@@ -804,7 +804,7 @@ H5I__wrapped_cb(void *_item, void H5_ATTR_UNUSED *_key, void *_udata)
  *
  * Purpose:     Registers an OBJECT in a TYPE and returns an ID for it.
  *              This routine does _not_ check for unique-ness of the objects,
- *              if you register an object twice, you will get two different
+ *              if you an object twice, you will get two different
  *              IDs for it.  This routine does make certain that each ID in a
  *              type is unique.  IDs are created by getting a unique number
  *              for the type the ID is in and incorporating the type into

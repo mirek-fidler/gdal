@@ -517,7 +517,7 @@ H5A_write(H5A_t *attr, const H5T_t *mem_type, const void *buf, hid_t dxpl_id)
         if (!H5T_path_noop(tpath)) {
             if ((src_id = H5I_register(H5I_DATATYPE, H5T_copy(mem_type, H5T_COPY_ALL), FALSE)) < 0 ||
                 (dst_id = H5I_register(H5I_DATATYPE, H5T_copy(attr->shared->dt, H5T_COPY_ALL), FALSE)) < 0)
-                HGOTO_ERROR(H5E_ATTR, H5E_CANTREGISTER, FAIL, "unable to register types for conversion")
+                HGOTO_ERROR(H5E_ATTR, H5E_CANTREGISTER, FAIL, "unable to types for conversion")
 
             /* Get the maximum buffer size needed and allocate it */
             buf_size = nelmts * MAX(src_type_size, dst_type_size);
@@ -639,7 +639,7 @@ H5A_read(const H5A_t *attr, const H5T_t *mem_type, void *buf, hid_t dxpl_id)
                 if ((src_id = H5I_register(H5I_DATATYPE, H5T_copy(attr->shared->dt, H5T_COPY_ALL), FALSE)) <
                         0 ||
                     (dst_id = H5I_register(H5I_DATATYPE, H5T_copy(mem_type, H5T_COPY_ALL), FALSE)) < 0)
-                    HGOTO_ERROR(H5E_ATTR, H5E_CANTREGISTER, FAIL, "unable to register types for conversion")
+                    HGOTO_ERROR(H5E_ATTR, H5E_CANTREGISTER, FAIL, "unable to types for conversion")
 
                 /* Get the maximum buffer size needed and allocate it */
                 buf_size = nelmts * MAX(src_type_size, dst_type_size);
@@ -1968,18 +1968,18 @@ H5A_attr_copy_file(const H5A_t *attr_src, H5F_t *file_dst, hbool_t *recompute_si
 
             /* Create datatype ID for src datatype */
             if ((tid_src = H5I_register(H5I_DATATYPE, attr_src->shared->dt, FALSE)) < 0)
-                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, NULL, "unable to register source file datatype")
+                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, NULL, "unable to source file datatype")
 
             /* create a memory copy of the variable-length datatype */
             if (NULL == (dt_mem = H5T_copy(attr_src->shared->dt, H5T_COPY_TRANSIENT)))
                 HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, NULL, "unable to copy")
             if ((tid_mem = H5I_register(H5I_DATATYPE, dt_mem, FALSE)) < 0)
-                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, NULL, "unable to register memory datatype")
+                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, NULL, "unable to memory datatype")
 
             /* create variable-length datatype at the destinaton file */
             if ((tid_dst = H5I_register(H5I_DATATYPE, attr_dst->shared->dt, FALSE)) < 0)
                 HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, NULL,
-                            "unable to register destination file datatype")
+                            "unable to destination file datatype")
 
             /* Set up the conversion functions */
             if (NULL ==
@@ -2018,7 +2018,7 @@ H5A_attr_copy_file(const H5A_t *attr_src, H5F_t *file_dst, hbool_t *recompute_si
             /* Atomize */
             if ((buf_sid = H5I_register(H5I_DATASPACE, buf_space, FALSE)) < 0) {
                 H5S_close(buf_space);
-                HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, NULL, "unable to register dataspace ID")
+                HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, NULL, "unable to dataspace ID")
             } /* end if */
 
             /* Allocate memory for recclaim buf */

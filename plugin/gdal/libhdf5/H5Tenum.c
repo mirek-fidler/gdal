@@ -88,7 +88,7 @@ H5Tenum_create(hid_t parent_id)
 
     /* Atomize the type */
     if ((ret_value = H5I_register(H5I_DATATYPE, dt, TRUE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register data type atom")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to data type atom")
 
 done:
     FUNC_LEAVE_API(ret_value)

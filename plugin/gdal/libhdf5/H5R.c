@@ -480,7 +480,7 @@ H5R_dereference(H5F_t *file, hid_t dxpl_id, H5R_type_t ref_type, const void *_re
             /* Create an atom for the group */
             if ((ret_value = H5I_register(H5I_GROUP, group, app_ref)) < 0) {
                 H5G_close(group);
-                HGOTO_ERROR(H5E_SYM, H5E_CANTREGISTER, FAIL, "can't register group")
+                HGOTO_ERROR(H5E_SYM, H5E_CANTREGISTER, FAIL, "can't group")
             } /* end if */
         }     /* end case */
         break;
@@ -494,7 +494,7 @@ H5R_dereference(H5F_t *file, hid_t dxpl_id, H5R_type_t ref_type, const void *_re
             /* Create an atom for the datatype */
             if ((ret_value = H5I_register(H5I_DATATYPE, type, app_ref)) < 0) {
                 H5T_close(type);
-                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, FAIL, "can't register datatype")
+                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, FAIL, "can't datatype")
             } /* end if */
         }     /* end case */
         break;
@@ -510,7 +510,7 @@ H5R_dereference(H5F_t *file, hid_t dxpl_id, H5R_type_t ref_type, const void *_re
             /* Create an atom for the dataset */
             if ((ret_value = H5I_register(H5I_DATASET, dset, app_ref)) < 0) {
                 H5D_close(dset);
-                HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "can't register dataset")
+                HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "can't dataset")
             } /* end if */
         }     /* end case */
         break;
@@ -699,7 +699,7 @@ H5Rget_region(hid_t id, H5R_type_t ref_type, const void *ref)
 
     /* Atomize */
     if ((ret_value = H5I_register(H5I_DATASPACE, space, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register dataspace atom")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to dataspace atom")
 
 done:
     FUNC_LEAVE_API(ret_value)

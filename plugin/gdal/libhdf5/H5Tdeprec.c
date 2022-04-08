@@ -223,7 +223,7 @@ H5Topen1(hid_t loc_id, const char *name)
 
     /* Register the type and return the ID */
     if ((ret_value = H5I_register(H5I_DATATYPE, type, TRUE)) < 0)
-        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register named datatype")
+        HGOTO_ERROR(H5E_DATATYPE, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to named datatype")
 
 done:
     if (H5I_INVALID_HID == ret_value) {

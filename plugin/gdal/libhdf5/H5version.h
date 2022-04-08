@@ -324,9 +324,9 @@
 #ifndef H5Pregister_vers
 #define H5Pregister_vers 2
 #endif /* H5Pregister_vers */
-#define H5Pregister H5Pregister2
+#define H5PH5Pregister2
 #elif H5Pregister_vers == 1
-#define H5Pregister H5Pregister1
+#define H5PH5Pregister1
 #else /* H5Pregister_vers */
 #error "H5Pregister_vers set to invalid value"
 #endif /* H5Pregister_vers */

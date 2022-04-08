@@ -548,11 +548,11 @@ H5O_fill_copy(const void *_src, void *_dst)
                 /* Wrap copies of types to convert */
                 dst_id = H5I_register(H5I_DATATYPE, H5T_copy(dst->type, H5T_COPY_TRANSIENT), FALSE);
                 if (dst_id < 0)
-                    HGOTO_ERROR(H5E_OHDR, H5E_CANTINIT, NULL, "unable to copy/register datatype")
+                    HGOTO_ERROR(H5E_OHDR, H5E_CANTINIT, NULL, "unable to copy/datatype")
                 src_id = H5I_register(H5I_DATATYPE, H5T_copy(src->type, H5T_COPY_ALL), FALSE);
                 if (src_id < 0) {
                     H5I_dec_ref(dst_id);
-                    HGOTO_ERROR(H5E_OHDR, H5E_CANTINIT, NULL, "unable to copy/register datatype")
+                    HGOTO_ERROR(H5E_OHDR, H5E_CANTINIT, NULL, "unable to copy/datatype")
                 } /* end if */
 
                 /* Allocate a background buffer */
@@ -708,7 +708,7 @@ H5O_fill_reset_dyn(H5O_fill_t *fill)
                 HGOTO_ERROR(H5E_OHDR, H5E_CANTINIT, FAIL, "unable to copy fill value datatype")
             if ((fill_type_id = H5I_register(H5I_DATATYPE, fill_type, FALSE)) < 0) {
                 H5T_close(fill_type);
-                HGOTO_ERROR(H5E_OHDR, H5E_CANTREGISTER, FAIL, "unable to register fill value datatype")
+                HGOTO_ERROR(H5E_OHDR, H5E_CANTREGISTER, FAIL, "unable to fill value datatype")
             } /* end if */
 
             /* Create a scalar dataspace for the fill value element */
@@ -949,7 +949,7 @@ H5O_fill_convert(H5O_fill_t *fill, H5T_t *dset_type, hbool_t *fill_changed, hid_
     if (!H5T_path_noop(tpath)) {
         if ((src_id = H5I_register(H5I_DATATYPE, H5T_copy(fill->type, H5T_COPY_ALL), FALSE)) < 0 ||
             (dst_id = H5I_register(H5I_DATATYPE, H5T_copy(dset_type, H5T_COPY_ALL), FALSE)) < 0)
-            HGOTO_ERROR(H5E_OHDR, H5E_CANTINIT, FAIL, "unable to copy/register data type")
+            HGOTO_ERROR(H5E_OHDR, H5E_CANTINIT, FAIL, "unable to copy/data type")
 
         /*
          * Datatype conversions are always done in place, so we need a buffer

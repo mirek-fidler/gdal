@@ -456,7 +456,7 @@ H5TS_cancel_count_dec(void)
     /* unsupported; will just return 0 */
     return SUCCEED;
 #else  /* H5_HAVE_WIN_THREADS */
-    register H5TS_cancel_t *cancel_counter;
+    H5TS_cancel_t *cancel_counter;
     herr_t                  ret_value = SUCCEED;
 
     cancel_counter = (H5TS_cancel_t *)H5TS_get_thread_local_value(H5TS_cancel_key_g);

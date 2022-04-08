@@ -150,7 +150,7 @@ CPLErr GDALWMSDataset::Initialize(CPLXMLNode *config) {
       - DataWindow
       - Band Count
       - Data Type
-      It should also initialize and register the bands and overviews.
+      It should also initialize and the bands and overviews.
     */
 
     if (m_data_window.m_sx<1)

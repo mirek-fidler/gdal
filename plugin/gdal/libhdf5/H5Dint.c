@@ -622,7 +622,7 @@ H5D__init_type(H5F_t *file, const H5D_t *dset, hid_t type_id, const H5T_t *type)
 
         /* Get a datatype ID for the dataset's datatype */
         if ((dset->shared->type_id = H5I_register(H5I_DATATYPE, dset->shared->type, FALSE)) < 0)
-            HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to register type")
+            HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to type")
     } /* end if */
     /* Not a custom datatype, just use it directly */
     else {
@@ -1329,7 +1329,7 @@ H5D__open_oid(H5D_t *dataset, hid_t dapl_id, hid_t dxpl_id)
 
     /* Get a datatype ID for the dataset's datatype */
     if ((dataset->shared->type_id = H5I_register(H5I_DATATYPE, dataset->shared->type, FALSE)) < 0)
-        HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to register type")
+        HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL, "unable to type")
 
     /* Get dataset creation property list object */
     if (NULL == (plist = (H5P_genplist_t *)H5I_object(dataset->shared->dcpl_id)))
@@ -2527,11 +2527,11 @@ H5D_get_create_plist(H5D_t *dset)
             /* Wrap copies of types to convert */
             dst_id = H5I_register(H5I_DATATYPE, H5T_copy(copied_fill.type, H5T_COPY_TRANSIENT), FALSE);
             if (dst_id < 0)
-                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "unable to copy/register datatype")
+                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "unable to copy/datatype")
             src_id = H5I_register(H5I_DATATYPE, H5T_copy(dset->shared->type, H5T_COPY_ALL), FALSE);
             if (src_id < 0) {
                 H5I_dec_ref(dst_id);
-                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "unable to copy/register datatype")
+                HGOTO_ERROR(H5E_DATATYPE, H5E_CANTINIT, FAIL, "unable to copy/datatype")
             } /* end if */
 
             /* Allocate a background buffer */
@@ -2678,7 +2678,7 @@ H5D_get_space(H5D_t *dset)
 
     /* Create an atom */
     if ((ret_value = H5I_register(H5I_DATASPACE, space, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register dataspace")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to dataspace")
 
 done:
     if (ret_value < 0)
@@ -2724,7 +2724,7 @@ H5D_get_type(H5D_t *dset)
         HGOTO_ERROR(H5E_DATASET, H5E_CANTINIT, FAIL, "unable to lock transient datatype")
 
     if ((ret_value = H5I_register(H5I_DATATYPE, dt, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register datatype")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to datatype")
 
 done:
     if (ret_value < 0)

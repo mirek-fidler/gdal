@@ -631,8 +631,8 @@ struct sqlite3_api_routines {
 #define sqlite3_sleep                  sqlite3_api->sleep
 #define sqlite3_soft_heap_limit        sqlite3_api->soft_heap_limit
 #define sqlite3_vfs_find               sqlite3_api->vfs_find
-#define sqlite3_vfs_register           sqlite3_api->vfs_register
-#define sqlite3_vfs_unregister         sqlite3_api->vfs_unregister
+#define sqlite3_vfs_          sqlite3_api->vfs_register
+#define sqlite3_vfs_un        sqlite3_api->vfs_unregister
 #define sqlite3_threadsafe             sqlite3_api->xthreadsafe
 #define sqlite3_result_zeroblob        sqlite3_api->result_zeroblob
 #define sqlite3_result_error_code      sqlite3_api->result_error_code

@@ -251,7 +251,7 @@ H5Acreate2(hid_t loc_id, const char *attr_name, hid_t type_id, hid_t space_id, h
 
     /* Register the new attribute and get an ID for it */
     if ((ret_value = H5I_register(H5I_ATTR, attr, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register attribute for ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to attribute for ID")
 
 done:
     /* Cleanup on failure */
@@ -341,7 +341,7 @@ H5Acreate_by_name(hid_t loc_id, const char *obj_name, const char *attr_name, hid
 
     /* Register the new attribute and get an ID for it */
     if ((ret_value = H5I_register(H5I_ATTR, attr, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register attribute for ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to attribute for ID")
 done:
     /* Release resources */
     if (loc_found && H5G_loc_free(&obj_loc) < 0)
@@ -403,7 +403,7 @@ H5Aopen(hid_t loc_id, const char *attr_name, hid_t H5_ATTR_UNUSED aapl_id)
 
     /* Register the attribute and get an ID for it */
     if ((ret_value = H5I_register(H5I_ATTR, attr, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATTR, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to register attribute for ID")
+        HGOTO_ERROR(H5E_ATTR, H5E_CANTREGISTER, H5I_INVALID_HID, "unable to attribute for ID")
 
 done:
     /* Cleanup on failure */
@@ -466,7 +466,7 @@ H5Aopen_by_name(hid_t loc_id, const char *obj_name, const char *attr_name, hid_t
 
     /* Register the attribute and get an ID for it */
     if ((ret_value = H5I_register(H5I_ATTR, attr, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register attribute for ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to attribute for ID")
 
 done:
     /* Cleanup on failure */
@@ -534,7 +534,7 @@ H5Aopen_by_idx(hid_t loc_id, const char *obj_name, H5_index_t idx_type, H5_iter_
 
     /* Register the attribute and get an ID for it */
     if ((ret_value = H5I_register(H5I_ATTR, attr, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register attribute for ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to attribute for ID")
 
 done:
     /* Cleanup on failure */
@@ -664,7 +664,7 @@ H5Aget_space(hid_t attr_id)
 
     /* Atomize */
     if ((ret_value = H5I_register(H5I_DATASPACE, ds, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register dataspace atom")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to dataspace atom")
 
 done:
     if (ret_value < 0) {
@@ -710,7 +710,7 @@ H5Aget_type(hid_t attr_id)
 
     /* Create an atom */
     if ((ret_value = H5I_register(H5I_DATATYPE, dt, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register datatype")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to datatype")
 
 done:
     if (ret_value < 0) {

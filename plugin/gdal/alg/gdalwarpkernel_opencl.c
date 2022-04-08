@@ -2003,7 +2003,7 @@ struct oclWarper* GDALWarpKernelOpenCL_createEnv(int srcWidth, int srcHeight,
     }
     
     // Split bands into sets of four when possible
-    // Cubic runs slower as vector, so don't use it (probably register pressure)
+    // Cubic runs slower as vector, so don't use it (probably pressure)
     // Feel free to do more testing and come up with more precise case statements
     if(numBands < 4 || resampAlg == OCL_Cubic) {
         warper->numImages = numBands;

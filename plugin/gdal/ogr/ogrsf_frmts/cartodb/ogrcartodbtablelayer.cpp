@@ -1318,7 +1318,7 @@ OGRErr OGRCARTODBTableLayer::RunDeferedCreationIfNecessary()
             if( eGType != wkbNone )
             {
                 CPLError(CE_Warning, CPLE_AppDefined,
-                        "Cannot register table in dashboard with "
+                        "Cannot table in dashboard with "
                         "cdb_cartodbfytable() since its SRS is not EPSG:4326");
             }
         }

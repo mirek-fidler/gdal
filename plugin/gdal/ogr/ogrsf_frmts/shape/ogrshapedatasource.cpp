@@ -411,7 +411,7 @@ void OGRShapeDataSource::AddLayer(OGRShapeLayer* poLayer)
         CPLRealloc( papoLayers,  sizeof(OGRShapeLayer *) * (nLayers+1) );
     papoLayers[nLayers++] = poLayer;
 
-    /* If we reach the limit, then register all the already opened layers */
+    /* If we reach the limit, then all the already opened layers */
     /* Technically this code would not be necessary if there was not the */
     /* following initial test in SetLastUsedLayer() : */
     /*      if (nLayers < MAX_SIMULTANEOUSLY_OPENED_LAYERS) */

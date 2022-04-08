@@ -194,7 +194,7 @@ H5G_traverse_ud(const H5G_loc_t *grp_loc /*in,out*/, const H5O_link_t *lnk, H5G_
     if (NULL == (grp = H5G_open(&grp_loc_copy, dxpl_id)))
         HGOTO_ERROR(H5E_SYM, H5E_CANTOPENOBJ, FAIL, "unable to open group")
     if ((cur_grp = H5I_register(H5I_GROUP, grp, FALSE)) < 0)
-        HGOTO_ERROR(H5E_SYM, H5E_CANTREGISTER, FAIL, "unable to register group")
+        HGOTO_ERROR(H5E_SYM, H5E_CANTREGISTER, FAIL, "unable to group")
 
     /* Check for generic default property list and use link access default if so */
     if (_lapl_id == H5P_DEFAULT) {

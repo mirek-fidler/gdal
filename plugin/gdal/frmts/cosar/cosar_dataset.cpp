@@ -202,7 +202,7 @@ GDALDataset *COSARDataset::Open( GDALOpenInfo * pOpenInfo ) {
 }
 
 
-/* register the driver with GDAL */
+/* the driver with GDAL */
 void GDALRegister_COSAR() {
 	GDALDriver *poDriver;
 	if (GDALGetDriverByName("cosar") == NULL) {

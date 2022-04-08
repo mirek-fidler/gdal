@@ -3035,7 +3035,7 @@ H5T__conv_enum_numeric(hid_t src_id, hid_t dst_id, H5T_cdata_t *cdata, size_t ne
                 if ((src_parent_id = H5I_register(H5I_DATATYPE, H5T_copy(src_parent, H5T_COPY_ALL), FALSE)) <
                     0)
                     HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL,
-                                "unable to register types for conversion")
+                                "unable to types for conversion")
 
                 /* Convert the data */
                 if (H5T_convert(tpath, src_parent_id, dst_id, nelmts, buf_stride, bkg_stride, _buf, bkg,
@@ -3189,7 +3189,7 @@ H5T__conv_vlen(hid_t src_id, hid_t dst_id, H5T_cdata_t *cdata, size_t nelmts, si
                     (tdst_id =
                          H5I_register(H5I_DATATYPE, H5T_copy(dst->shared->parent, H5T_COPY_ALL), FALSE)) < 0)
                     HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL,
-                                "unable to register types for conversion")
+                                "unable to types for conversion")
             } /* end else-if */
             else
                 noop_conv = TRUE;
@@ -3532,7 +3532,7 @@ H5T__conv_array(hid_t src_id, hid_t dst_id, H5T_cdata_t *cdata, size_t nelmts, s
                     (tdst_id =
                          H5I_register(H5I_DATATYPE, H5T_copy(dst->shared->parent, H5T_COPY_ALL), FALSE)) < 0)
                     HGOTO_ERROR(H5E_DATASET, H5E_CANTREGISTER, FAIL,
-                                "unable to register types for conversion")
+                                "unable to types for conversion")
             }
 
             /* Check if we need a background buffer for this conversion */

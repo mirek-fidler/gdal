@@ -177,7 +177,7 @@ H5Acreate1(hid_t loc_id, const char *name, hid_t type_id, hid_t space_id, hid_t 
 
     /* Register the new attribute and get an ID for it */
     if ((ret_value = H5I_register(H5I_ATTR, attr, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register attribute for ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to attribute for ID")
 
 done:
     FUNC_LEAVE_API(ret_value)
@@ -229,7 +229,7 @@ H5Aopen_name(hid_t loc_id, const char *name)
 
     /* Register the attribute and get an ID for it */
     if ((ret_value = H5I_register(H5I_ATTR, attr, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register attribute for ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to attribute for ID")
 
 done:
     /* Cleanup on failure */
@@ -285,7 +285,7 @@ H5Aopen_idx(hid_t loc_id, unsigned idx)
 
     /* Register the attribute and get an ID for it */
     if ((ret_value = H5I_register(H5I_ATTR, attr, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register attribute for ID")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to attribute for ID")
 
 done:
     /* Cleanup on failure */

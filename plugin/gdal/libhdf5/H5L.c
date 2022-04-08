@@ -240,7 +240,7 @@ H5L_init_interface(void)
 
     /* Initialize user-defined link classes */
     if (H5L_register_external() < 0)
-        HGOTO_ERROR(H5E_LINK, H5E_NOTREGISTERED, FAIL, "unable to register external link class")
+        HGOTO_ERROR(H5E_LINK, H5E_NOTREGISTERED, FAIL, "unable to external link class")
 
 done:
     FUNC_LEAVE_NOAPI(ret_value)
@@ -930,7 +930,7 @@ H5Lregister(const H5L_class_t *cls)
 
     /* Do it */
     if (H5L_register(cls) < 0)
-        HGOTO_ERROR(H5E_LINK, H5E_NOTREGISTERED, FAIL, "unable to register link type")
+        HGOTO_ERROR(H5E_LINK, H5E_NOTREGISTERED, FAIL, "unable to link type")
 
 done:
     FUNC_LEAVE_API(ret_value)
@@ -965,7 +965,7 @@ H5Lunregister(H5L_type_t id)
 
     /* Do it */
     if (H5L_unregister(id) < 0)
-        HGOTO_ERROR(H5E_LINK, H5E_NOTREGISTERED, FAIL, "unable to unregister link type")
+        HGOTO_ERROR(H5E_LINK, H5E_NOTREGISTERED, FAIL, "unable to unlink type")
 
 done:
     FUNC_LEAVE_API(ret_value)
@@ -1406,7 +1406,7 @@ done:
  * Purpose:     Registers a class of user-defined links, or changes the
  *              behavior of an existing class.
  *
- *              See H5Lregister for full documentation.
+ *              See H5Lfor full documentation.
  *
  * Return:      Non-negative on success/Negative on failure
  *
@@ -1451,14 +1451,14 @@ H5L_register(const H5L_class_t *cls)
 
 done:
     FUNC_LEAVE_NOAPI(ret_value)
-} /* end H5L_register */
+} /* end H5L_*/
 
 /*-------------------------------------------------------------------------
  * Function:    H5L_unregister
  *
  * Purpose:     Unregisters a class of user-defined links.
  *
- *              See H5Lunregister for full documentation.
+ *              See H5Lunfor full documentation.
  *
  * Return:      Non-negative on success/Negative on failure
  *
@@ -1698,7 +1698,7 @@ H5L_link_cb(H5G_loc_t *grp_loc /*in*/, const char *name, const H5O_link_t H5_ATT
             if ((grp = H5G_open(&temp_loc, udata->dxpl_id)) == NULL)
                 HGOTO_ERROR(H5E_SYM, H5E_CANTOPENOBJ, FAIL, "unable to open group")
             if ((grp_id = H5I_register(H5I_GROUP, grp, TRUE)) < 0)
-                HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register ID for group")
+                HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to ID for group")
 
             /* Make callback */
             if ((link_class->create_func)(name, grp_id, udata->lnk->u.ud.udata, udata->lnk->u.ud.size,
@@ -1997,7 +1997,7 @@ H5L_create_ud(const H5G_loc_t *link_loc, const char *link_name, const void *ud_d
 
     /* Create actual link to the object */
     if (H5L_create_real(link_loc, link_name, NULL, NULL, &lnk, NULL, lcpl_id, lapl_id, dxpl_id) < 0)
-        HGOTO_ERROR(H5E_LINK, H5E_CANTINIT, FAIL, "unable to register new name for object")
+        HGOTO_ERROR(H5E_LINK, H5E_CANTINIT, FAIL, "unable to new name for object")
 
 done:
     /* Free the link's udata buffer if it's been allocated */
@@ -2397,7 +2397,7 @@ H5L_move_dest_cb(H5G_loc_t *grp_loc /*in*/, const char *name, const H5O_link_t H
             if ((grp = H5G_open(&temp_loc, udata->dxpl_id)) == NULL)
                 HGOTO_ERROR(H5E_SYM, H5E_CANTOPENOBJ, FAIL, "unable to open group")
             if ((grp_id = H5I_register(H5I_GROUP, grp, TRUE)) < 0)
-                HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register group ID")
+                HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to group ID")
 
             if (udata->copy) {
                 if ((link_class->copy_func)(udata->lnk->name, grp_id, udata->lnk->u.ud.udata,

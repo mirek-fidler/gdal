@@ -145,7 +145,7 @@ hid_t H5E_MOUNT_g          = FAIL;      /* File mount error */
 /* Object atom related errors */
 hid_t H5E_BADATOM_g        = FAIL;      /* Unable to find atom information (already closed?) */
 hid_t H5E_BADGROUP_g       = FAIL;      /* Unable to find ID group information */
-hid_t H5E_CANTREGISTER_g   = FAIL;      /* Unable to register new atom */
+hid_t H5E_CANTREGISTER_g   = FAIL;      /* Unable to new atom */
 hid_t H5E_CANTINC_g        = FAIL;      /* Unable to increment reference count */
 hid_t H5E_CANTDEC_g        = FAIL;      /* Unable to decrement reference count */
 hid_t H5E_NOIDS_g          = FAIL;      /* Out of IDs for group */

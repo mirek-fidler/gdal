@@ -799,7 +799,7 @@ H5G_iterate(hid_t loc_id, const char *group_name, H5_index_t idx_type, H5_iter_o
     if (NULL == (grp = H5G__open_name(&loc, group_name, lapl_id, dxpl_id)))
         HGOTO_ERROR(H5E_SYM, H5E_CANTOPENOBJ, FAIL, "unable to open group")
     if ((gid = H5I_register(H5I_GROUP, grp, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register group")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to group")
 
     /* Set up user data for callback */
     udata.gid     = gid;
@@ -1062,7 +1062,7 @@ H5G_visit(hid_t loc_id, const char *group_name, H5_index_t idx_type, H5_iter_ord
 
     /* Register an ID for the starting group */
     if ((gid = H5I_register(H5I_GROUP, grp, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to register group")
+        HGOTO_ERROR(H5E_ATOM, H5E_CANTREGISTER, FAIL, "unable to group")
 
     /* Get the location of the starting group */
     if (H5G_loc(gid, &start_loc) < 0)

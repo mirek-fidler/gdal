@@ -89,9 +89,9 @@ class OGRWAsPLayer : public OGRLayer
     enum OpenMode {READ_ONLY, WRITE_ONLY};
     OpenMode              eMode;
 
-    std::auto_ptr<double> pdfTolerance;
-    std::auto_ptr<double> pdfAdjacentPointTolerance;
-    std::auto_ptr<double> pdfPointToCircleRadius;
+    std::unique_ptr<double> pdfTolerance;
+    std::unique_ptr<double> pdfAdjacentPointTolerance;
+    std::unique_ptr<double> pdfPointToCircleRadius;
 
     OGRErr                WriteRoughness( OGRLineString *,
                                           const double & dfZleft,
@@ -172,7 +172,7 @@ class OGRWAsPDataSource : public OGRDataSource
 {
     CPLString                     sFilename;
     VSILFILE *                    hFile;
-    std::auto_ptr<OGRWAsPLayer>   oLayer;
+    std::unique_ptr<OGRWAsPLayer>   oLayer;
 
     void               GetOptions(CPLString & sFirstField, 
                                   CPLString & sSecondField,

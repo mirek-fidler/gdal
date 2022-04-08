@@ -240,7 +240,7 @@ H5E_init_interface(void)
     if (NULL == (cls = H5E_register_class(H5E_CLS_NAME, H5E_CLS_LIB_NAME, lib_vers)))
         HGOTO_ERROR(H5E_ERROR, H5E_CANTINIT, FAIL, "class initialization failed")
     if ((H5E_ERR_CLS_g = H5I_register(H5I_ERROR_CLASS, cls, FALSE)) < 0)
-        HGOTO_ERROR(H5E_ERROR, H5E_CANTREGISTER, FAIL, "can't register error class")
+        HGOTO_ERROR(H5E_ERROR, H5E_CANTREGISTER, FAIL, "can't error class")
 
 /* Include the automatically generated error code initialization */
 #include "H5Einit.h"
@@ -439,7 +439,7 @@ H5Eregister_class(const char *cls_name, const char *lib_name, const char *versio
 
     /* Register the new error class to get an ID for it */
     if ((ret_value = H5I_register(H5I_ERROR_CLASS, cls, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ERROR, H5E_CANTREGISTER, H5I_INVALID_HID, "can't register error class")
+        HGOTO_ERROR(H5E_ERROR, H5E_CANTREGISTER, H5I_INVALID_HID, "can't error class")
 
 done:
     FUNC_LEAVE_API(ret_value)
@@ -448,7 +448,7 @@ done:
 /*-------------------------------------------------------------------------
  * Function:    H5E_register_class
  *
- * Purpose:     Private function to register an error class.
+ * Purpose:     Private function to an error class.
  *
  * Return:      Success:    Pointer to an error class struct
  *              Failure:    NULL
@@ -770,7 +770,7 @@ H5Ecreate_msg(hid_t class_id, H5E_type_t msg_type, const char *msg_str)
 
     /* Register the new error class to get an ID for it */
     if ((ret_value = H5I_register(H5I_ERROR_MSG, msg, TRUE)) < 0)
-        HGOTO_ERROR(H5E_ERROR, H5E_CANTREGISTER, H5I_INVALID_HID, "can't register error message")
+        HGOTO_ERROR(H5E_ERROR, H5E_CANTREGISTER, H5I_INVALID_HID, "can't error message")
 
 done:
     FUNC_LEAVE_API(ret_value)
@@ -933,7 +933,7 @@ done:
 /*-------------------------------------------------------------------------
  * Function:    H5E_get_current_stack
  *
- * Purpose:     Private function to register an error stack.
+ * Purpose:     Private function to an error stack.
  *
  * Return:      Success:    Pointer to an error class struct
  *              Failure:    NULL

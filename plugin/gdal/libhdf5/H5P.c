@@ -296,7 +296,7 @@ done:
  NAME
     H5Pregister2
  PURPOSE
-    Routine to register a new property in a property list class.
+    Routine to a new property in a property list class.
  USAGE
     herr_t H5Pregister2(class, name, size, default, prp_create, prp_set, prp_get, prp_close)
         hid_t class;            IN: Property list class to close
@@ -471,7 +471,7 @@ H5Pregister2(hid_t cls_id, const char *name, size_t size, void *def_value, H5P_p
     orig_pclass = pclass;
     if ((ret_value = H5P_register(&pclass, name, size, def_value, prp_create, prp_set, prp_get, prp_delete,
                                   prp_copy, prp_cmp, prp_close)) < 0)
-        HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL, "unable to register property in class")
+        HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL, "unable to property in class")
 
     /* Check if the property class changed and needs to be substituted in the ID */
     if (pclass != orig_pclass) {
@@ -654,7 +654,7 @@ H5Pinsert2(hid_t plist_id, const char *name, size_t size, void *value, H5P_prp_s
     /* Create the new property list class */
     if ((ret_value = H5P_insert(plist, name, size, value, prp_set, prp_get, prp_delete, prp_copy, prp_cmp,
                                 prp_close)) < 0)
-        HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL, "unable to register property in plist")
+        HGOTO_ERROR(H5E_PLIST, H5E_CANTREGISTER, FAIL, "unable to property in plist")
 
 done:
     FUNC_LEAVE_API(ret_value)
