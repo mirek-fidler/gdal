@@ -427,6 +427,28 @@ bool Gdal::Open(const char *fn)
 	return true;
 }
 
+bool Gdal::OpenMemory(void *ptr, size_t len, const char *ext)
+{
+	String path = "/vsimem/" + AsString(Uuid::Create());
+	if(ext && *ext) {
+		if(*ext != '.')
+			path << '.';
+		path << ext;
+	}
+	VSILFILE* fpMem = VSIFileFromMemBuffer(path, (GByte*)ptr, (vsi_l_offset) len, FALSE );
+	VSIFCloseL(fpMem);
+	bool r = Open(path);
+    VSIUnlink(path);
+    return r;
+}
+
+bool Gdal::OpenMemory(const String& s, const char *ext)
+{
+	Buffer<char> b(s.GetLength());
+	memcpy(b, s, s.GetLength());
+	return OpenMemory(b, s.GetLength(), ext);
+}
+
 void Gdal::Close()
 {
 	bands.Clear();

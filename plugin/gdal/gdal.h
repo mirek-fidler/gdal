@@ -81,6 +81,8 @@ public:
 	~Gdal();
 	
 	bool             Open(const char *filename);
+	bool             OpenMemory(void *ptr, size_t len, const char *ext);
+	bool             OpenMemory(const String& s, const char *ext);
 	bool             IsOpen() const               { return dataset; }
 	String           GetFileName() const          { return filename; }
 	void             Close();
