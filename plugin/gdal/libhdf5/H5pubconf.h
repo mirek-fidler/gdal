@@ -300,7 +300,7 @@
 #endif
 
 /* Define to 1 if you have the <unistd.h> header file. */
-// #define H5_HAVE_UNISTD_H 1
+#define H5_HAVE_UNISTD_H 1
 
 /* Define to 1 if you have the `vasprintf' function. */
 // #define H5_HAVE_VASPRINTF 1
