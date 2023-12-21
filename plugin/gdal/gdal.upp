@@ -2,6 +2,9 @@ noblitz;
 
 options(BUILDER_OPTION) NOWARNINGS;
 
+uses
+	Geom;
+
 include
 	gcore,
 	port,

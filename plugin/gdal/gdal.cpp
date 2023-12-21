@@ -9,6 +9,7 @@
 #include <gdal/libhdf5/hdf5.h>
 #include <gdal/gcore/gdal_priv.h>
 #include <gdal/port/cpl_conv.h>
+#include <gdal/ogr/ogr_spatialref.h>
 
 #undef uint8
 #undef uint16
@@ -284,7 +285,7 @@ Gdal::~Gdal()
 	Close();
 }
 
-bool Gdal::Open(const char *fn)
+void InitGdal()
 {
     ONCELOCK {
         MemoryIgnoreLeaksBegin();
@@ -400,7 +401,12 @@ bool Gdal::Open(const char *fn)
 
         MemoryIgnoreLeaksEnd();
     }
- 
+}
+
+bool Gdal::Open(const char *fn)
+{
+	InitGdal();
+	
 	Close();
 	
 	MemoryIgnoreLeaksBegin();
@@ -471,4 +477,44 @@ Size Gdal::GetPixelSize() const
 Rectf Gdal::GetExtent() const
 {
 	return Rectf(Sizef(GetPixelSize())) * GetTransform();
+}
+
+bool SaveGeoTiff(const char *fn, const double *data, Size sz, const Rectf& extent, int epsg)
+{
+	InitGdal();
+
+	MemoryIgnoreLeaksBegin();
+
+    GDALDriver *poDriver = GetGDALDriverManager()->GetDriverByName("GTiff");
+    if(!poDriver) return false;
+	GDALDataset *poDstDS = poDriver->Create(fn, sz.cx, sz.cy, 1, GDT_Float64, NULL);
+    if(!poDstDS) return false;
+
+	Matrixf m = MatrixfAffine(Pointf(0, 0), extent.TopLeft(), Sizef(sz), extent.BottomRight());
+
+	double affine[6];
+	affine[0] = m.a.x;
+	affine[1] = m.x.x;
+	affine[2] = m.y.x;
+	affine[3] = m.a.y;
+	affine[4] = m.x.y;
+	affine[5] = m.y.y;
+
+	poDstDS->SetGeoTransform(affine);
+
+	OGRSpatialReference oSRS;
+	oSRS.SetWellKnownGeogCS(epsg ? "EPSG:" + AsString(epsg) : "WGS84");
+	char *pszSRS_WKT = NULL;
+	oSRS.exportToWkt(&pszSRS_WKT);
+	poDstDS->SetProjection( pszSRS_WKT );
+	CPLFree( pszSRS_WKT );
+
+	GDALRasterBand *poBand = poDstDS->GetRasterBand(1);
+	poBand->RasterIO( GF_Write, 0, 0, sz.cx, sz.cy, (void*)data, sz.cx, sz.cy, GDT_Float64, 0, 0, nullptr);
+	/* Once we're done, close properly the dataset */
+	GDALClose( (GDALDatasetH) poDstDS );
+
+	MemoryIgnoreLeaksEnd();
+
+	return true;
 }

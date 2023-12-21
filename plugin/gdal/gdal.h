@@ -106,4 +106,6 @@ private:
 	Matrixf          inverse_transform;
 };
 
+bool SaveGeoTiff(const char *fn, const double *data, Size sz, const Rectf& extent, int epsg);
+
 #endif
