@@ -299,8 +299,10 @@
 #define H5_HAVE_TM_GMTOFF 1
 #endif
 
+#ifndef flagWIN32
 /* Define to 1 if you have the <unistd.h> header file. */
 #define H5_HAVE_UNISTD_H 1
+#endif
 
 /* Define to 1 if you have the `vasprintf' function. */
 // #define H5_HAVE_VASPRINTF 1
