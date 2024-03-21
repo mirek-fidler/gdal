@@ -52,6 +52,8 @@
 #include "gdal_alg.h"
 #include "gdal_alg_priv.h"
 
+#include <stdint.h>
+
 #if defined(__x86_64) || defined(_M_X64)
 #define USE_SSE2
 #endif
