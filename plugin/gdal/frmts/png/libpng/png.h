@@ -487,6 +487,8 @@
  *       PNG Development Group
  */
 
+This file should not be included in any case!
+
 #ifndef PNG_H
 #define PNG_H
 
