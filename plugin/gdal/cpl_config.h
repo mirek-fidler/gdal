@@ -10,8 +10,10 @@
 #ifndef _gdal_cpl_config_h_
 #define _gdal_cpl_config_h_
 
+#ifndef flagVCPKG
 #define RENAME_INTERNAL_LIBTIFF_SYMBOLS
 #define RENAME_INTERNAL_LIBGEOTIFF_SYMBOLS
+#endif
 
 // added to embed in U++ to fix plugin/tif interoperability
 #define TIFFSwabArrayOfDouble gdal_TIFFSwabArrayOfDouble
